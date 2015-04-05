@@ -40,6 +40,75 @@ public class ProtectedDataEntry
    	return scan.nextInt();
    }
 
+   public static boolean readBoolean(Scanner scan)
+   {   
+      while(!scan.hasNextBoolean())
+      {
+         String garbage = scan.nextLine();
+         System.out.println("Please enter the value as a boolean variable");
+      }
+      
+      return scan.nextBoolean();
+   }
+   
+   public static byte readByte(Scanner scan)
+    {
+      while(!scan.hasNextByte())
+      {
+         String garbage = scan.nextLine();
+         System.out.println("Please enter the value as a byte");
+      }
+      
+      return scan.nextByte();
+   }
+   
+   public static short readShort(Scanner scan)
+     {
+      while(!scan.hasNextShort())
+      {
+         String garbage = scan.nextLine();
+         System.out.println("Please enter the value as a short");
+      }
+      
+      return scan.nextShort();
+   }
+   
+   public static long readLong(Scanner scan)
+     {
+      while(!scan.hasNextLong())
+      {
+         String garbage = scan.nextLine();
+         System.out.println("Please enter the value as a Long");
+      }
+      
+      return scan.nextLong();
+   }
+   
+   public static float readFloat(Scanner scan)
+     {
+      while(!scan.hasNextFloat())
+      {
+         String garbage = scan.nextLine();
+         System.out.println("Please enter the value as a float");
+      }
+      
+      return scan.nextFloat();
+   }
+   
+   public static char readChar(Scanner scan)
+      while(!scan.hasNextChar())
+      {
+         String garbage = scan.nextLine();
+         System.out.println("Please enter the value as a CHAR variable");
+      }
+      
+      return scan.nextChar();
+   }
+   
+   
+
+   
+   
    //////MORE methods should be here -- one for every type we could read in
    /////////such as, boolean, short, byte, etc.
 }
