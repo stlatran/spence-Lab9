@@ -14,8 +14,8 @@ public class Lab9
       announce();
       
       int choice = menu(scan);
-      while (choice == "NONE")
-      System.exit(1);
+      if (choice == -5)
+         System.exit(1);
 
       outputAnswers(choice); //do whatever the menu choice said to do
     
@@ -24,7 +24,7 @@ public class Lab9
     private static void announce()
     {
     System.out.println("This program is meant to help Avagail understand the physics behind projectiles.");
-    System.out.print("This program will be basing our calculations off of how far away something rolls if it n/ falls off of a desk, where an object is at a given time if it's thrown up in the n/ air and then caught, and how far something travels if it is thrown into n/ the air and lands at the same height as from where it was thrown. Input NONE when you want to stop the calculation.");    
+    System.out.print("This program will be basing our calculations off of how far away something rolls if it n/ falls off of a desk, where an object is at a given time if it's thrown up in the n/ air and then caught, and how far something travels if it is thrown into n/ the air and lands at the same height as from where it was thrown. Input -5 when you want to stop the calculation.");    
     }
    /********************************************************
     * Purpose: Read in the menu option from the user and return it
@@ -39,9 +39,9 @@ public class Lab9
 
      System.out.print("Which choice from the menu would you like to make?"); //Ask them which choice they would like to make
 
-     ProtectedDataEntry.readDouble(); //Read in their answer using ProtectedDataEntry
+     ProtectedDataEntry.readDouble(scan); //Read in their answer using ProtectedDataEntry
 
-     return menu; //return their answer
+     return menu(scan); //return their answer
 
    }
 
@@ -60,8 +60,8 @@ public class Lab9
           //Add each case and the code you need for it
          
           case 0:
-          PhysicsCalculations.distanceRolled (double velocity, double height);
-          plot1 = new Plot("distance", 0, 50, 5, 0, 100, 5);
+          PhysicsCalculations.distanceRolled (range);
+          Plot plot1 = new Plot("distance", 0, 50, 5, 0, 100, 5);
           {
           while (velocity == 5 && height == 20)
           System.out.print(range);
@@ -88,8 +88,8 @@ public class Lab9
           break;
           
           case 1:
-          PhysicsCalculations.distanceUp(int time, double velocity);
-          plot2 = new Plot("distance", 0, 10, 1, 0, 150, 10);
+          PhysicsCalculations.distanceUp(time, velocity);
+          Plot plot2 = new Plot("distance", 0, 10, 1, 0, 150, 10);
           {
           while ((time >= 1 || time <= 10)&&(velocity == 50))
           System.out.print(y);
@@ -99,8 +99,8 @@ public class Lab9
           break;
           
           case 2:
-          PhysicsCalculations.distanceThrown (double theta, double velocity);
-          plot3 = new Plot("distance", 0, 100, 5, 0, 12, 2);
+          PhysicsCalculations.distanceThrown (theta, velocity);
+          Plot plot3 = new Plot("distance", 0, 100, 5, 0, 12, 2);
           {
           while (theta == 0 && velocity == 10)
           System.out.print(range);
