@@ -14,17 +14,17 @@ public class Lab9
       announce();
       
       int choice = menu(scan);
-      if (choice == -5)
-         System.exit(1);
-
-      outputAnswers(choice); //do whatever the menu choice said to do
-    
+      while (choice != -5)
+      {
+         outputAnswers(choice); //do whatever the menu choice said to do
+         choice = menu(scan);
+      }
     }
     
     private static void announce()
     {
     System.out.println("This program is meant to help Avagail understand the physics behind projectiles.");
-    System.out.print("This program will be basing our calculations off of how far away something rolls if it n/ falls off of a desk, where an object is at a given time if it's thrown up in the n/ air and then caught, and how far something travels if it is thrown into n/ the air and lands at the same height as from where it was thrown. Input -5 when you want to stop the calculation.");    
+    System.out.print("This program will be basing our calculations off of how far away something rolls if it falls off of a desk, where an object is at a given time \n if it's thrown up in the air and then caught, and how far something travels if it is thrown into the air and lands at the same height as from \n where it was thrown. Input -5 when you want to stop the calculation.");    
     }
    /********************************************************
     * Purpose: Read in the menu option from the user and return it
@@ -35,13 +35,13 @@ public class Lab9
     */
    private static int menu(Scanner scan)
    {
-     System.out.print("Hello. The menu options are byte, short, int, long, double, char, and boolean"); //Tell the user the menu options
+     System.out.print("Hello. The menu options are 0 (for Roll, 1 (for Toss up), or 2 (for Throw)"); //Tell the user the menu options
 
-     System.out.print("Which choice from the menu would you like to make?"); //Ask them which choice they would like to make
+     System.out.println("\n Which choice from the menu would you like to make?"); //Ask them which choice they would like to make
 
-     ProtectedDataEntry.readDouble(scan); //Read in their answer using ProtectedDataEntry
+     int choice = ProtectedDataEntry.readInt(scan); //Read in their answer using ProtectedDataEntry
 
-     return menu(scan); //return their answer
+     return choice; //return their answer
 
    }
 
@@ -60,94 +60,44 @@ public class Lab9
           //Add each case and the code you need for it
          
           case 0:
-          PhysicsCalculations.distanceRolled (range);
-          Plot plot1 = new Plot("distance", 0, 50, 5, 0, 100, 5);
-          {
-          while (velocity == 5 && height == 20)
-          System.out.print(range);
-          while (velocity ==10 && height == 20)
-          System.out.print(range);
-          while (velocity == 15 && height == 20)
-          System.out.print(range);
-          while (velocity == 20 && height == 20)
-          System.out.print(range);
-          while (velocity == 25 && height == 20)
-          System.out.print(range);
-          while (velocity == 30 && height == 20)
-          System.out.print(range);
-          while (velocity == 35 && height == 20)
-          System.out.print(range);
-          while (velocity == 40 && height == 20)
-          System.out.print(range);
-          while (velocity == 45 && height == 20)
-          System.out.print(range);
-          while (velocity == 50 && height == 20)
-          System.out.print(range);
-          }
-          System.out.print(plot1);
-          break;
-          
+            double velocity = 0;
+            double height = 0;
+            Plot plot1 = new Plot("distance", 0, 50, 5, 0, 100, 5);
+            for(velocity = 5; velocity<=50; velocity+=5)
+            {
+               height = 20;
+               double physics = PhysicsCalculations.distanceRolled(velocity, height);
+               System.out.print(physics);
+               plot1.addPoint(velocity, physics);
+            }
+            break;
+            
           case 1:
-          PhysicsCalculations.distanceUp(time, velocity);
-          Plot plot2 = new Plot("distance", 0, 10, 1, 0, 150, 10);
-          {
-          while ((time >= 1 || time <= 10)&&(velocity == 50))
-          System.out.print(y);
-          }
-          System.out.print(plot2);
-          
-          break;
-          
+            int time = 0;
+            velocity = 0;
+            Plot plot2 = new Plot("distance", 0, 10, 1, 0, 150, 10);
+            for(time = 1; time<=10; time++)
+               {
+               velocity = 50;
+               double physics = PhysicsCalculations.distanceUp(time, velocity);
+               System.out.print(physics);
+               plot2.addPoint(time, physics);
+            }
+            break;
+            
           case 2:
-          PhysicsCalculations.distanceThrown (theta, velocity);
-          Plot plot3 = new Plot("distance", 0, 100, 5, 0, 12, 2);
-          {
-          while (theta == 0 && velocity == 10)
-          System.out.print(range);
-          while (theta == 5 && velocity == 10)
-          System.out.print(range);
-          while (theta == 10 && velocity == 10)
-          System.out.print(range);
-          while (theta == 15 && velocity == 10)
-          System.out.print(range);
-          while (theta == 20 && velocity == 10)
-          System.out.print(range);
-          while (theta == 25 && velocity == 10)
-          System.out.print(range);
-          while (theta == 30 && velocity == 10)
-          System.out.print(range);
-          while (theta == 35 && velocity == 10)
-          System.out.print(range);
-          while (theta == 40 && velocity == 10)
-          System.out.print(range);
-          while (theta == 45 && velocity == 10)
-          System.out.print(range);
-          while (theta == 50 && velocity == 10)
-          System.out.print(range);
-          while (theta == 55 && velocity == 10)
-          System.out.print(range);
-          while (theta == 60 && velocity == 10)
-          System.out.print(range);
-          while (theta == 65 && velocity == 10)
-          System.out.print(range);
-          while (theta == 70 && velocity == 10)
-          System.out.print(range);
-          while (theta == 75 && velocity == 10)
-          System.out.print(range);
-          while (theta == 80 && velocity == 10)
-          System.out.print(range);
-          while (theta == 85 && velocity == 10)
-          System.out.print(range);
-          while (theta == 90 && velocity == 10)
-          System.out.print(range);
-          }
-          Plot.addPoint(xvalue, yvalue);
-          System.out.print(plot3);
-          
-          break;
-          
-          System.out.print(range);
-
+            double theta = 0;
+            velocity = 0;
+            Plot plot3 = new Plot("distance", 0, 100, 5, 0, 12, 2);
+            for(theta = 0; theta<=90; theta+=5)
+               {
+               velocity = 10;
+               double physics = PhysicsCalculations.distanceThrown(theta, velocity);
+               System.out.print(physics);
+               plot3.addPoint(theta,physics);
+               }
+             break;
+             
           default:
             System.out.println("Thanks for using the program! Good bye!");
         }

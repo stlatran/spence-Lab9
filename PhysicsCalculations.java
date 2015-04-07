@@ -3,8 +3,9 @@ public class PhysicsCalculations
    
    public static double distanceRolled (double velocity, double height)
    {
-   double range = velocity*Math.sqrt((2*height)/9.8);
-   
+   double range = velocity*(Math.sqrt((2*height)/9.8));
+   if (range<0)
+   range = 0;
    return range;
    }   
    
@@ -12,7 +13,7 @@ public class PhysicsCalculations
     
    public static double distanceUp (int time, double velocity)
    {
-   double y = velocity*time-0.5*9.8*Math.pow(time,2);
+   double y = (velocity*time)-(0.5*9.8)*Math.pow(time,2);
    if (y<0)
       y=0;
    return y;
