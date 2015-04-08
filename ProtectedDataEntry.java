@@ -40,9 +40,17 @@ public class ProtectedDataEntry
    	return scan.nextInt();
    }
 
+    /***********
+    * Purpose: to continue asking the user for a value until they enter a boolean
+    * Parameters: Scanner - the scanner used for input
+    * Algorithm: while the user has not entered a boolean, read it in as a string and ask
+         again.  Once the loop ends, read in a boolean.
+    * Return: boolean - the read in value
+    */
+
    public static boolean readBoolean(Scanner scan)
    {   
-      while(!scan.hasNextBoolean())
+      while(!scan.hasNextBoolean())//keep trying until they enter it correctly
       {
          String garbage = scan.nextLine();
          System.out.println("Please enter the value as a boolean variable");
@@ -51,9 +59,17 @@ public class ProtectedDataEntry
       return scan.nextBoolean();
    }
    
+    /***********
+    * Purpose: to continue asking the user for a value until they enter a byte
+    * Parameters: Scanner - the scanner used for input
+    * Algorithm: while the user has not entered a byte, read it in as a string and ask
+         again.  Once the loop ends, read in a byte.
+    * Return: byte - the read in value
+    */
+
    public static byte readByte(Scanner scan)
     {
-      while(!scan.hasNextByte())
+      while(!scan.hasNextByte()) //keep trying until they enter it correctly
       {
          String garbage = scan.nextLine();
          System.out.println("Please enter the value as a byte");
@@ -62,9 +78,17 @@ public class ProtectedDataEntry
       return scan.nextByte();
    }
    
+    /***********
+    * Purpose: to continue asking the user for a value until they enter a short
+    * Parameters: Scanner - the scanner used for input
+    * Algorithm: while the user has not entered a short, read it in as a string and ask
+         again.  Once the loop ends, read in a short.
+    * Return: short - the read in value
+    */
+
    public static short readShort(Scanner scan)
      {
-      while(!scan.hasNextShort())
+      while(!scan.hasNextShort()) //keep trying until they get it right
       {
          String garbage = scan.nextLine();
          System.out.println("Please enter the value as a short");
@@ -73,9 +97,17 @@ public class ProtectedDataEntry
       return scan.nextShort();
    }
    
+    /***********
+    * Purpose: to continue asking the user for a value until they enter a long
+    * Parameters: Scanner - the scanner used for input
+    * Algorithm: while the user has not entered an long, read it in as a string and ask
+         again.  Once the loop ends, read in a long.
+    * Return: long - the read in value
+    */
+
    public static long readLong(Scanner scan)
      {
-      while(!scan.hasNextLong())
+      while(!scan.hasNextLong()) //keep trying until they get it right
       {
          String garbage = scan.nextLine();
          System.out.println("Please enter the value as a Long");
@@ -86,10 +118,3 @@ public class ProtectedDataEntry
    
    }
    
-   
-   
-
-   
-   
-   //////MORE methods should be here -- one for every type we could read in
-   /////////such as, boolean, short, byte, etc.

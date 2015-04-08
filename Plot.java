@@ -20,7 +20,7 @@ import java.util.*;			// needed for Date and Properties
  * 	setPointSize(int), setPointShape(int), and setColor(Color).
  *
  *	@author Dan Schroeder
- */
+ **/
 
 public class Plot extends Canvas {
 
