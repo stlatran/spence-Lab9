@@ -1,0 +1,26 @@
+Lab 9 Grading – 40 pts possible
+Final grade: 37
+
+No comment if it works perfectly. Comment and amount of points off added after each area where something needs to be fixed.
+
+Points earned:
+1/2 of listed points are completion, other 1/2 are correctness:
+[2] intro comments in all classes - missing in physics calculation (-1)
+[2] inline comments
+[2] method comments 
+[2] correct indentation 
+[2] good variable names 
+[2] compiles
+[2] distanceRolled implemented correctly
+[2] distanceUp implemented correctly 
+[2] distanceThrown implemented correctly 
+[4] methods all match UML as given 
+[2] announce method
+[2] menu method
+[3] menu & outputAnswers called correctly in main
+[3] plot used correctly
+[2] problem 1 called correctly in outputAnswers
+[2] problem 2 called correctly in outputAnswers
+[2] problem 3 called correctly in outputAnswers
+[2] Reflection - missing (-2)
+
